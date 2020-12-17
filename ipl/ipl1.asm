@@ -19,31 +19,10 @@ start:
 
 
     hello_world db  '------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Hello, ZizoyaOS is booting...-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',0
-    ;define/declare bytes for hello_world
+    ;define/declare bytes for hello_world, use 0 as null terminator
 
-print_string:
-    mov ah, 0x0E            ; Write #0x0E instruction for int 0x10
-
-.repeat_next_char:
-    lodsb                        ; Load byte at address SI into AL
-    cmp al, 0                    ; cmp al with end of string
-    je .finish_print             ; je: jump to .done_print if equal
-    int 0x10                     ; else: call BIOS function 0x10 to print char in al
-    jmp .repeat_next_char        ; print recursively
-
-.finish_print:
-    ret
-
-clear_screen:                ; function for clear pre-load info including BIOS info  
-    mov    ah, 0x06          ; Write #0x06 instruction for int 0x10 
-    mov    al, 0 
-    mov    ch, 0
-    mov    ch, 0    
-    mov    dh, 24 
-    mov    dl, 79
-    mov    bh, 0x07  
-    int 0x10  
-    ret  
+%include "print_string.asm"
+%include "clear_screen.asm"
 
 times (510 - ($ - $$)) db 0x00     ; fill up to 512 bytes
 dw 0xAA55                          ; boot-sector signature "magic number" 0xAA & 0x55
