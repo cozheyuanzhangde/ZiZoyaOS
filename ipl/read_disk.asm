@@ -13,10 +13,9 @@ disk_load:
     ret
 
 disk_read_error:              ;print disk read error message
-    mov bx, ERROR_Message
+    mov si, ERROR_Message
     call print_string
     jmp $
 
-%include "print_string.asm"
 
 ERROR_Message db 'Failed to read disk as expected!', 0 ;define/declare bytes for ERROR_Message, use 0 as null terminator
