@@ -1,4 +1,4 @@
-## ZiZoyaOS
+# ZiZoyaOS
 An Operating System developed for self-learning purpose.(Still in progress...)
 ## Environment Requirements: (paths is required for windows)
 1. nasm - assembler for assembly code
