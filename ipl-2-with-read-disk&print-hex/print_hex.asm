@@ -2,6 +2,7 @@ print_hex:
     pusha
     mov cx, 0
 
+; manipulate chars at hexoutput
 hex_loop:
     cmp cx, 4
     je end   
@@ -13,7 +14,7 @@ hex_loop:
     add al, 7
 
 step2:
-    mov bx, HEX_OUT + 5
+    mov bx, hexoutput + 5
     sub bx, cx
     mov [bx], al
     ror dx, 4
@@ -21,10 +22,10 @@ step2:
     jmp hex_loop
 
 end:
-    mov si, HEX_OUT
+    mov si, hexoutput
     call print_string
     popa
     ret
 
-HEX_OUT:
+hexoutput:
     db '0x0000',0
