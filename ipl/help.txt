@@ -1,1 +1,0 @@
-BIOS int-10 interrupt: http://www.ctyme.com/intr/int-10.htm
