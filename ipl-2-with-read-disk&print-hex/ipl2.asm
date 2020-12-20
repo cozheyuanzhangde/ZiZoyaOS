@@ -25,6 +25,6 @@ newline db '', 0xd, 0xa, 0 ;0xd: let cursor go to hard left, 0xa: newline
 times 510 -($-$$) db 0
 dw 0xaa55
 ;two additional sectors we want to read:
-times 256 dw 0x0123     ; dw: define word, which is 8 bits(2 bytes), 2*256 = 512bytes
-times 256 dw 0x4567     ; dw: define word, which is 8 bits(2 bytes), 2*256 = 512bytes
-times 256 dw 0x89ab     ; dw: define word, which is 8 bits(2 bytes), 2*256 = 512bytes
+times 256 dw 0x0123     ; dw: define word, which is 2 bytes, 2*256 = 512bytes
+times 256 dw 0x4567     ; dw: define word, which is 2 bytes, 2*256 = 512bytes
+times 256 dw 0x89ab     ; dw: define word, which is 2 bytes, 2*256 = 512bytes
