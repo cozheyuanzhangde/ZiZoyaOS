@@ -1,26 +1,32 @@
-[bits 32] ; using 32-bit protected mode
+[org 0x7c00]
 
-; this is how constants are defined
-VIDEO_MEMORY equ 0xb8000
-WHITE_ON_BLACK equ 0x0f ; the color byte for each character
+start:
 
-print_string_pm:
-    pusha
-    mov edx, VIDEO_MEMORY
+    mov bp , 0x9000  ; set stack
+    mov sp , bp
+    call clear_screen_16bit
+    mov si , MSG_16bit_REALMODE_BOOTING
+    call print_string_16bit
+    call switch_to_pm ; start entering into 32bit protected mode
 
-print_string_pm_loop:
-    mov al, [ebx] ; [ebx] is the address of our character
-    mov ah, WHITE_ON_BLACK
+    MSG_16bit_REALMODE_BOOTING db "Hello, ZizoyaOS is booting in 16BIT-REAL-MODE...Please Wait...", 0
 
-    cmp al, 0 ; check if end of string
-    je print_string_pm_done
 
-    mov [edx], ax ; store character + attribute in video memory
-    add ebx, 1 ; next char
-    add edx, 2 ; next video memory position
+%include "zizoya16_print_string.asm"
+%include "zizoya32_print_string.asm"
+%include "zizoya32_gdt.asm"
+%include "zizoya16to32.asm"
+%include "zizoya16_clear_screen.asm"
 
-    jmp print_string_pm_loop
+[bits 32]
+BEGIN_PM:               ; be called in zizoya16to32.asm(after the switch)
 
-print_string_pm_done:
-    popa
-    ret
+    mov ebx , MSG_32bit_PROTECTEDMODE_BOOTING
+    call print_string_32bit
+    jmp $
+
+    MSG_32bit_PROTECTEDMODE_BOOTING db ">>>>>>ZizoyaOS successfully entered 32BIT-PROTECTED-MODE>>>>>>", 0
+
+
+times 510 -($-$$) db 0
+dw 0xaa55
