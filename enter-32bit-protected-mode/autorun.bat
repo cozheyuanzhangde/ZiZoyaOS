@@ -1,2 +1,2 @@
-nasm -f bin zizoya32_1.asm -o zizoya32_1.bin
-qemu-system-x86_64 zizoya32_1.bin
+nasm -f bin zizoya32_enter.asm -o zizoya32_enter.bin
+qemu-system-x86_64 zizoya32_enter.bin
