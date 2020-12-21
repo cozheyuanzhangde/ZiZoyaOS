@@ -14,7 +14,7 @@ disk_load_16bit:
 
 disk_read_error:              ;print disk read error message
     mov si, ERROR_Message
-    call print_string
+    call print_string_16bit
     jmp $
 
 
