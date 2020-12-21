@@ -23,7 +23,7 @@ step2:
 
 end:
     mov si, hexoutput
-    call print_string
+    call print_string_16bit
     popa
     ret
 
