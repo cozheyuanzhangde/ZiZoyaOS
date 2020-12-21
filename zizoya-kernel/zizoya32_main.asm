@@ -31,7 +31,7 @@ load_kernel:
     mov bx, KERNEL_OFFSET
     mov dh, 15
     mov dl, [BOOTDRIVE]
-    call zizoya16_read_disk
+    call disk_load_16bit
 
     ret
 
