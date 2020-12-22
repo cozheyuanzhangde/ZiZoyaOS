@@ -16,13 +16,13 @@ start:
     MSG_16bit_REALMODE_BOOTING db "Hello, ZizoyaOS is booting in 16BIT-REAL-MODE...Please Wait...", 0
 
 
-%include "zizoya16_print_string.asm"
-%include "zizoya32_print_string.asm"
-%include "zizoya32_gdt.asm"
-%include "zizoya16to32.asm"
-%include "zizoya16_clear_screen.asm"
-%include "zizoya16_print_hex.asm"
-%include "zizoya16_read_disk.asm"
+%include "ipl/zizoya16_print_string.asm"
+%include "ipl/zizoya32_print_string.asm"
+%include "ipl/zizoya32_gdt.asm"
+%include "ipl/zizoya16to32.asm"
+%include "ipl/zizoya16_clear_screen.asm"
+%include "ipl/zizoya16_print_hex.asm"
+%include "ipl/zizoya16_read_disk.asm"
 
 [bits 16]
 load_kernel:
