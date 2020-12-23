@@ -1,0 +1,1 @@
+void zzyk_memcpy(char *source, char *dest, int size);
