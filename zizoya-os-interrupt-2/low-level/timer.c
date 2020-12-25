@@ -2,6 +2,7 @@
 #include "../drivers/vga.h"
 #include "../kernel/zizoya_util.h"
 #include "isr.h"
+#include "../drivers/ports.h"
 
 unsigned int tick = 0;
 
@@ -12,6 +13,7 @@ static void timer_callback(registers_t regs) {
     char tick_ascii[256];
     zzyk_itoa(tick, tick_ascii);
     vga_print(tick_ascii);
+    vga_print("s");
     vga_print("\n");
 }
 

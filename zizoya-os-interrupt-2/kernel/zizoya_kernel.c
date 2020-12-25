@@ -6,9 +6,9 @@
 #include "../drivers/keyboard.h"
 
 void main() {
+    vga_print("hello");
     isr_install();
-
-    asm volatile("sti");
-    init_timer(50);
+    __asm__ __volatile__("sti");
+    //init_timer(10);
     init_keyboard();
 }

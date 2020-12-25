@@ -3,8 +3,6 @@
 
 #include "predef.h"
 
-typedef void (*isr_t)(registers_t);
-
 //isr
 extern void isr0();
 extern void isr1();
@@ -82,6 +80,8 @@ typedef struct {
 } registers_t;
 
 void isr_install();
+
+typedef void (*isr_t)(registers_t);
 
 void isr_handler(registers_t r);
 

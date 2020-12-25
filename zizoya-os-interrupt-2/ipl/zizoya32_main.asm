@@ -29,7 +29,7 @@ load_kernel:
     mov si, MSG_LOAD_ZizoyaKernel
     call print_string_16bit
     mov bx, KERNEL_OFFSET
-    mov dh, 15
+    mov dh, 31
     mov dl, [BOOTDRIVE]
     call disk_load_16bit
 

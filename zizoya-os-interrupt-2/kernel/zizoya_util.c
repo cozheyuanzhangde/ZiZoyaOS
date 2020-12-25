@@ -1,4 +1,6 @@
 //ZizoyaOS-Kernel(zzyk)-utilities
+#include "zizoya_util.h"
+
 void zzyk_memcpy(char* source, char* dest, int size) {
     int i;
     for (i = 0; i < size; i++) {

@@ -4,10 +4,9 @@
 #include "vga.h"
 
 static void keyboard_callback(registers_t regs) {
-    // The PIC leaves us the scancode in port 0x60
     unsigned char scancode = port_byte_in(0x60);
-    char* sc_ascii;
-    zzyk_atoi(scancode, sc_ascii);
+    char *sc_ascii;
+    zzyk_itoa(scancode, sc_ascii);
     vga_print("Keyboard scancode: ");
     vga_print(sc_ascii);
     vga_print(", ");
