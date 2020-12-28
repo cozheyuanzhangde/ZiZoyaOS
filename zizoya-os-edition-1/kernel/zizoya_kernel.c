@@ -93,7 +93,7 @@ void input_selector(char* input) {
             vga_print("HALT:      Halt/Stop the CPU\n");
             vga_print("MEMALLOC:  Allocate Memory and Show the Physical Address\n");
             vga_print("SETINT:    Set Interrupts\n");
-            vga_print("TIMER:     Enable Timer(Install TIMER IRQ) and Show Timer 'Ticking' (for total 100 ticks)\n");
+            vga_print("TIMER:     Enable Timer(Install TIMER IRQ) and Show Timer 'Ticking' (for total             100 ticks)\n");
         }else{
             vga_print("Unknown Command in Shell Mode NORMAL.");
         }
