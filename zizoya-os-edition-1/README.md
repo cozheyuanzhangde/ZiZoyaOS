@@ -1,2 +1,2 @@
 ## Important Things:
-1. Shell
+1. Calculator and more functionalities.
