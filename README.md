@@ -1,6 +1,6 @@
 # ZiZoyaOS
 A toy operating system from scratch (in progress).
-## Environment Requirements:
+## Environment requirements:
 1. nasm - assembler for assembly code
 2. qemu - CPU emulator to debug our OS
 3. gcc - compiler for C code
