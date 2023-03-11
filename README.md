@@ -3,6 +3,7 @@ A toy operating system from scratch (in progress).
 ## Demos:
 ZiZoyaOS runs on a QEMU virtual machine/(qemu-system-i386) emulator:
 ![ZiZoyaOS on QEMU](demo1.webp)
+
 ZiZoyaOS runs on a real PC(Old SONY VAIO):
 ![ZiZoyaOS on Real PC](demo2.webp)
 
