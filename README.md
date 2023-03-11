@@ -12,4 +12,4 @@ In QEMU Windows version which executable files are separated, EXEs below can be 
 
 ## Important logs:
 1. 2020/12/21 It seems MingGW has some differences from Linux one which caused extra obstacles during developing, therefore, I decided to switch my environment to Linux in future developing. Current step: zizoya-kernel. Everything before zizoya-kernel(folder) is totally based on Windows environment.
-2. I have abandoned this project long time ago, so it is not an operating system technically. Feel free to continue working on it!
+2. I have abandoned this project long time ago and it is not an operating system technically. Feel free to continue working on it!
