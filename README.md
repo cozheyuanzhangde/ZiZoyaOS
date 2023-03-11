@@ -1,5 +1,5 @@
 # ZiZoyaOS
-An Operating System developed for self-learning purpose.(Still in progress...)
+An Operating System developed for self-learning purpose. (Still in progress...)
 ## Environment Requirements: (paths are required for Windows)
 1. nasm - assembler for assembly code
 2. qemu - CPU emulator to debug our OS
