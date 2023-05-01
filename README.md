@@ -17,6 +17,10 @@ In QEMU Windows version which executable files are separated, EXEs below can be 
 1. qemu-system-i386
 2. qemu-system-x86_64
 
+## How to run?
+1. cd zzyos-v1.0.1/output
+2. qemu-system-i386 -fda ZiZoyaOS.bin
+
 ## Important logs:
 1. 2020/12/21 It seems MingGW has some differences from Linux one which caused extra obstacles during developing, therefore, I decided to switch my environment to Linux in future developing. Current step: zizoya-kernel. Everything before zizoya-kernel(folder) is totally based on Windows environment.
 2. I have abandoned this project long time ago and it is not an fully developed operating system technically. Feel free to continue working on it!
